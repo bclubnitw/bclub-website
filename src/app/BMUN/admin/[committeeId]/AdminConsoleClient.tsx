@@ -27,7 +27,7 @@ export default function AdminConsoleClient({ params }: { params: Promise<{ commi
       .on("postgres_changes", { event: "UPDATE", schema: "public", table: "bmun_rooms", filter: `id=eq.${committeeId}` }, (payload) => {
         setRoomState(payload.new as any);
       })
-      .on("postgres_changes", { event: "*", schema: "public", table: "bmun_buzzes", filter: `room_id=eq.${committeeId}` }, () => {
+      .on("postgres_changes", { event: "*", schema: "public", table: "bmun_buzzes"}, () => {
         supabase.from("bmun_buzzes").select("*").eq("room_id", committeeId).order("buzzed_at", { ascending: true })
           .then(({ data }) => { if (data) setLineup(data); });
       })

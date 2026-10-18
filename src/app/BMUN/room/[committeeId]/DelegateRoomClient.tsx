@@ -34,7 +34,7 @@ export default function DelegateRoomClient({ params }: { params: Promise<{ commi
       .on("postgres_changes", { event: "UPDATE", schema: "public", table: "bmun_rooms", filter: `id=eq.${committeeId}` }, (payload) => {
         setRoomState(payload.new as any);
       })
-      .on("postgres_changes", { event: "*", schema: "public", table: "bmun_buzzes", filter: `room_id=eq.${committeeId}` }, () => {
+      .on("postgres_changes", { event: "*", schema: "public", table: "bmun_buzzes"}, () => {
         supabase.from("bmun_buzzes").select("*").eq("room_id", committeeId).order("buzzed_at", { ascending: true })
           .then(({ data }) => { if (data) setLineup(data); });
       })
@@ -72,7 +72,7 @@ export default function DelegateRoomClient({ params }: { params: Promise<{ commi
           <span className="font-mono text-red-500 font-bold tracking-widest uppercase mb-4 block">ACCESS DENIED</span>
           <h1 className="font-display text-2xl text-white uppercase font-black">Room Locked by Executive Board</h1>
           <p className="font-sans text-gray-400 mt-4 text-sm">Please wait for the Dais to open the session floor.</p>
-          <Link href="/bmun" className="mt-8 inline-block font-mono text-xs text-white border-b border-white hover:text-cyan-400">Return to Dossier</Link>
+          <Link href={`/BMUN`} className="mt-8 inline-block font-mono text-xs text-white border-b border-white hover:text-cyan-400">Return to Dossier</Link>
         </div>
       </div>
     );

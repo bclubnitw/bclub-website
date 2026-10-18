@@ -99,7 +99,7 @@ export default function NameplateCard({ item, committeeId, isFlipped, onToggle }
           {/* {////////////////////////} */}
             <div className="pt-4 border-t-2 border-black/20 mt-4">
                 <a
-                    href={`/bmun/room/${committeeId}?delegation=${encodeURIComponent(item.delegation)}`}
+                    href={`/BMUN/room/${committeeId}?delegation=${encodeURIComponent(item.delegation)}`}
                     className={`block w-full py-2 text-center font-display uppercase tracking-widest text-sm font-black border-2 transition-colors ${
                     isEcofin 
                         ? "bg-white text-red-700 border-black hover:bg-black hover:text-white" 
