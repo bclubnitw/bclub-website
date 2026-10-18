@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { SOCIAL_MEDIA } from "@/constants/social_media";
 
 export default function Footer() {
   const currentYear = 2026;
@@ -75,7 +76,7 @@ export default function Footer() {
             <div className="flex flex-col gap-3 font-sans text-sm">
               {/* LinkedIn */}
               <a
-                href="https://www.linkedin.com/company/bclub-nitw"
+                href={`${SOCIAL_MEDIA.linkedin}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-bclub-slate hover:text-bclub-teal transition-colors group"
@@ -90,7 +91,7 @@ export default function Footer() {
 
               {/* Instagram */}
               <a
-                href="https://instagram.com/bclubnitw"
+                href={`${SOCIAL_MEDIA.instagram}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 text-bclub-slate hover:text-bclub-teal transition-colors group"
@@ -105,7 +106,7 @@ export default function Footer() {
 
               {/* Gmail / Email */}
               <a
-                href="mailto:bclub@nitw.ac.in"
+                href={`${SOCIAL_MEDIA.email}`}
                 className="flex items-center gap-3 text-bclub-slate hover:text-bclub-teal transition-colors group"
               >
                 <span className="flex h-8 w-8 items-center justify-center rounded-sm bg-white/5 border border-white/10 group-hover:border-bclub-teal/50 transition-colors">
