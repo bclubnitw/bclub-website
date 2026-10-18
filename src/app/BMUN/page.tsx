@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import ClassifiedDossier from "./component/ClassifiedDossier";
 
 export const metadata: Metadata = {
-  title: "BMUN 2026 // Classified Intelligence | Business Club NITW",
+  title: "BMUN 2026 | Business Club NITW",
   description:
     "Official classified intelligence briefing and interactive nameplate placards for Business Model United Nations (BMUN) 2026 by Business Club, NIT Warangal.",
 };

@@ -59,7 +59,7 @@ export default function NameplateCard({ item, committeeId, isFlipped, onToggle }
 
       {/* Ribbon Banner */}
       <div className={`px-4 py-1.5 border-b-2 border-black flex items-center justify-between font-mono text-[9px] font-bold tracking-widest uppercase ${isEcofin ? "bg-[#e5dfd3] text-black" : "bg-[#070e24] text-gray-400"}`}>
-        <span className="truncate max-w-[210px]">
+        <span className="truncate max-w-52.5">
           {isEcofin ? "UNGA SECOND COMMITTEE" : "UN ECONOMIC & SOCIAL COUNCIL"}
         </span>
         <span className={themeColors.accent}>
@@ -84,17 +84,31 @@ export default function NameplateCard({ item, committeeId, isFlipped, onToggle }
         </div>
       ) : (
         <div className={`p-6 space-y-3 flex-1 flex flex-col justify-center relative z-10 ${isEcofin ? "bg-red-700 text-white" : "bg-[#070e24] text-white"}`}>
-          <div className="flex items-center justify-between border-b-2 border-black/30 pb-2">
-            <span className="font-display uppercase text-xl font-bold tracking-wide">
-              {item.delegation}
-            </span>
-            <span className={`font-mono text-[10px] uppercase font-bold ${isEcofin ? "text-red-200" : "text-amber-400"}`}>
-              STANCE OCT '26
-            </span>
-          </div>
-          <p className="font-sans text-xs leading-relaxed font-medium">
-            {item.stance}
-          </p>
+            <div className="flex items-center justify-between border-b-2 border-black/30 pb-2">
+                <span className="font-display uppercase text-xl font-bold tracking-wide">
+                {item.delegation}
+                </span>
+                <span className={`font-mono text-[10px] uppercase font-bold ${isEcofin ? "text-red-200" : "text-amber-400"}`}>
+                STANCE OCT '26
+                </span>
+            </div>
+            <p className="font-sans text-xs leading-relaxed font-medium">
+                {item.stance}
+            </p>
+
+          {/* {////////////////////////} */}
+            <div className="pt-4 border-t-2 border-black/20 mt-4">
+                <a
+                    href={`/bmun/room/${committeeId}?delegation=${encodeURIComponent(item.delegation)}`}
+                    className={`block w-full py-2 text-center font-display uppercase tracking-widest text-sm font-black border-2 transition-colors ${
+                    isEcofin 
+                        ? "bg-white text-red-700 border-black hover:bg-black hover:text-white" 
+                        : "bg-black text-cyan-400 border-cyan-400 hover:bg-cyan-400 hover:text-black"
+                    }`}
+                >
+                    JOIN {committeeId.toUpperCase()} SESSION
+                </a>
+            </div>
         </div>
       )}
 
