@@ -14,20 +14,6 @@ const navLinks = [
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       // Reveal the brand logo/text in navbar once scrolled past 120px
-//       if (window.scrollY > 120) {
-//         setScrolled(true);
-//       } else {
-//         setScrolled(false);
-//       }
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
   return (
     <header
       className={"fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#ebf4f6]/90 backdrop-blur-md border-b border-bclub-charcoal/10 shadow-xs"}
