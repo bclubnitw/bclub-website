@@ -38,12 +38,12 @@ export default function HeroSection() {
   const isComplete = animStage === "complete";
 
   return (
-    <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-bclub-ice px-6">
+    <main className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-bclub-dark px-6">
       {/* Subtle grid background */}
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.03]"
+        className="pointer-events-none absolute inset-0 opacity-[0.06]"
         style={{
-          backgroundImage: `radial-gradient(var(--color-bclub-dark) 1px, transparent 1px)`,
+          backgroundImage: `radial-gradient(var(--color-bclub-teal) 1px, transparent 1px)`,
           backgroundSize: "28px 28px",
         }}
       />
@@ -82,19 +82,19 @@ export default function HeroSection() {
           </span>
 
           {/* Business Club, NITW */}
-          <h1 className="mt-1 font-display uppercase font-extrabold tracking-wider text-bclub-dark text-4xl sm:text-6xl md:text-7xl leading-tight">
+          <h1 className="mt-1 font-display uppercase font-extrabold tracking-wider text-white text-4xl sm:text-6xl md:text-7xl leading-tight">
             Business Club, NITW
           </h1>
 
           {/* Distinct Divider Bar */}
           <div className="my-5 flex items-center gap-2">
             <span className="h-0.5 w-8 bg-bclub-teal rounded-full" />
-            <span className="h-1.5 w-1.5 rounded-full bg-bclub-navy" />
+            <span className="h-1.5 w-1.5 rounded-full bg-bclub-cyan" />
             <span className="h-0.5 w-8 bg-bclub-teal rounded-full" />
           </div>
 
           {/* Official Tagline */}
-          <p className="font-display uppercase tracking-[0.22em] text-sm sm:text-base md:text-lg font-bold text-bclub-navy">
+          <p className="font-display uppercase tracking-[0.22em] text-sm sm:text-base md:text-lg font-bold text-bclub-cyan">
             LEARN. TEACH. INNOVATE. EVOLVE
           </p>
 
@@ -106,7 +106,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Business Club NITW on LinkedIn"
-              className="group flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-bclub-charcoal/15 bg-white text-bclub-navy shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-bclub-teal hover:bg-bclub-teal/10 hover:text-bclub-cyan hover:shadow-md"
+              className="group flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-bclub-slate/30 bg-bclub-charcoal/60 text-bclub-ice/80 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-bclub-teal hover:bg-bclub-teal/15 hover:text-bclub-teal hover:shadow-[0_0_15px_rgba(55,183,195,0.3)]"
             >
               <svg
                 className="h-4.5 w-4.5 sm:h-5 sm:w-5 fill-current transition-transform duration-300 group-hover:scale-110"
@@ -122,7 +122,7 @@ export default function HeroSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Business Club NITW on Instagram"
-              className="group flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-bclub-charcoal/15 bg-white text-bclub-navy shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-bclub-teal hover:bg-bclub-teal/10 hover:text-bclub-cyan hover:shadow-md"
+              className="group flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-bclub-slate/30 bg-bclub-charcoal/60 text-bclub-ice/80 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-bclub-teal hover:bg-bclub-teal/15 hover:text-bclub-teal hover:shadow-[0_0_15px_rgba(55,183,195,0.3)]"
             >
               <svg
                 className="h-5 w-5 sm:h-5.5 sm:w-5.5 fill-current transition-transform duration-300 group-hover:scale-110"

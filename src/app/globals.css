@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  /* Site Base Tokens */
-  --background: #ebf4f6; /* Ice light background */
-  --foreground: #111318; /* Dark ink text */
+  /* Site Base: Permanent Dark */
+  --background: #111318;
+  --foreground: #ebf4f6;
 
   /* B-Club Brand Palette */
   --bclub-dark: #111318;
-  --bclub-charcoal: #262c3a;
+  --bclub-charcoal: #1c222d;
   --bclub-ice: #ebf4f6;
   --bclub-teal: #37b7c3;
   --bclub-cyan: #46abc0;
@@ -44,10 +44,10 @@ body {
 
 ::selection {
   background-color: var(--bclub-teal);
-  color: #ffffff;
+  color: var(--bclub-dark);
 }
 
 ::-moz-selection {
   background-color: var(--bclub-teal);
-  color: #ffffff;
+  color: var(--bclub-dark);
 }

@@ -52,7 +52,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/team" className="hover:text-bclub-teal transition-colors">
+                <Link href="/members" className="hover:text-bclub-teal transition-colors">
                   Executive Team
                 </Link>
               </li>

@@ -6,9 +6,9 @@ import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  {name: "BMUN", href: "/BMUN"},
+  { name: "BMUN", href: "/BMUN" },
   { name: "Events", href: "/events" },
-  { name: "Team", href: "/team" },
+  { name: "Members", href: "/members" },
   // { name: "Connect", href: "/connect" },
 ];
 
@@ -17,13 +17,13 @@ export default function Navbar() {
 
   return (
     <header
-      className={"fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#ebf4f6]/90 backdrop-blur-md border-b border-bclub-charcoal/10 shadow-xs"}
+      className={"fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-bclub-dark/85 backdrop-blur-md border-b border-bclub-slate/20 shadow-md"}
     >
       <div className="max-w-7xl mx-auto px-6 h-18 flex items-center justify-between">
         {/* Brand Lockup (Left): Only visible once scrolled past hero */}
         <Link
           href="/"
-          className={`flex items-center gap-3 transition-all duration-500 opacity-100 translate-y-0}`}
+          className={`flex items-center gap-3 transition-all duration-500 opacity-100 translate-y-0`}
         >
           <div className="relative w-8 h-8">
             <Image
@@ -33,8 +33,8 @@ export default function Navbar() {
               className="object-contain"
             />
           </div>
-          <span className="font-display uppercase font-bold text-lg tracking-wider text-bclub-dark">
-            BClub, <span className="text-bclub-cyan">NITW</span>
+          <span className="font-display uppercase font-bold text-lg tracking-wider text-white">
+            BClub, <span className="text-bclub-teal">NITW</span>
           </span>
         </Link>
 
@@ -44,7 +44,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="font-sans text-sm font-semibold tracking-wide text-bclub-charcoal hover:text-bclub-cyan transition-colors"
+              className="font-sans text-sm font-semibold tracking-wide text-bclub-ice/75 hover:text-bclub-teal transition-colors"
             >
               {link.name}
             </Link>
@@ -59,18 +59,18 @@ export default function Navbar() {
           aria-label="Toggle Navigation Menu"
         >
           <span
-            className={`h-0.5 w-6 bg-bclub-dark rounded-full transition-all duration-300 ${
-              mobileMenuOpen ? "rotate-45 translate-y-2" : ""
+            className={`h-0.5 w-6 bg-bclub-ice rounded-full transition-all duration-300 ${
+              mobileMenuOpen ? "rotate-45 translate-y-2 bg-bclub-teal" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-6 bg-bclub-dark rounded-full transition-all duration-300 ${
+            className={`h-0.5 w-6 bg-bclub-ice rounded-full transition-all duration-300 ${
               mobileMenuOpen ? "opacity-0" : ""
             }`}
           />
           <span
-            className={`h-0.5 w-6 bg-bclub-dark rounded-full transition-all duration-300 ${
-              mobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
+            className={`h-0.5 w-6 bg-bclub-ice rounded-full transition-all duration-300 ${
+              mobileMenuOpen ? "-rotate-45 -translate-y-2 bg-bclub-teal" : ""
             }`}
           />
         </button>
@@ -78,7 +78,7 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-[#ebf4f6] border-b border-bclub-charcoal/10 px-6 py-6 transition-all duration-300 shadow-md ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-bclub-dark/95 backdrop-blur-xl border-b border-bclub-slate/20 px-6 py-6 transition-all duration-300 shadow-xl ${
           mobileMenuOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-3 pointer-events-none"
@@ -90,7 +90,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="font-sans text-base font-semibold text-bclub-charcoal hover:text-bclub-cyan transition-colors"
+              className="font-sans text-base font-semibold text-bclub-ice/85 hover:text-bclub-teal transition-colors"
             >
               {link.name}
             </Link>

@@ -31,26 +31,26 @@ const pillars = [
 
 export default function AboutSection() {
   return (
-    <section className="relative w-full pt-24 pb-12 px-6 bg-bclub-ice border-t border-bclub-charcoal/10 overflow-hidden">
+    <section className="relative w-full pt-24 pb-12 px-6 bg-bclub-dark border-t border-bclub-slate/20 overflow-hidden">
       <div className="max-w-7xl mx-auto flex flex-col gap-20">
         
         {/* Top Split: Section Tagline & Mission Statement */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           <div className="lg:col-span-4 flex flex-col gap-2">
-            <span className="font-mono text-xs uppercase tracking-[0.25em] text-bclub-cyan font-semibold">
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-bclub-teal font-semibold">
               Who We Are
             </span>
-            <h2 className="font-display uppercase font-extrabold text-4xl sm:text-5xl text-bclub-dark tracking-wide leading-tight">
+            <h2 className="font-display uppercase font-extrabold text-4xl sm:text-5xl text-white tracking-wide leading-tight">
               Bridging Tech & High Finance
             </h2>
           </div>
 
-          <div className="lg:col-span-8 flex flex-col gap-6 text-bclub-charcoal font-sans text-base sm:text-lg leading-relaxed">
+          <div className="lg:col-span-8 flex flex-col gap-6 text-bclub-ice/80 font-sans text-base sm:text-lg leading-relaxed">
             <p>
-              Founded in 2015, <strong className="text-bclub-navy font-semibold">Business Club, NIT Warangal</strong> serves as the premier student-led catalyst for financial acumen, strategic consulting, and corporate leadership on campus.
+              Founded in 2015, <strong className="text-white font-semibold">Business Club, NIT Warangal</strong> serves as the premier student-led catalyst for financial acumen, strategic consulting, and corporate leadership on campus.
             </p>
-            <p className="text-bclub-slate text-sm sm:text-base">
-              <span className="font-bold text-bclub-navy">Our mission </span>is to translate engineering precision into business intuition — empowering students with the analytical rigor, market literacy, and strategic mindset required to thrive in dynamic global markets.
+            <p className="text-bclub-ice/65 text-sm sm:text-base">
+              <span className="font-bold text-bclub-cyan">Our mission </span>is to translate engineering precision into business intuition — empowering students with the analytical rigor, market literacy, and strategic mindset required to thrive in dynamic global markets.
             </p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default function AboutSection() {
           {pillars.map((pillar) => (
             <div
               key={pillar.index}
-              className="group relative flex flex-col justify-between p-8 bg-white border border-bclub-charcoal/10 hover:border-bclub-teal transition-all duration-300 shadow-xs hover:shadow-md rounded-xs"
+              className="group relative flex flex-col justify-between p-8 bg-bclub-charcoal/50 border border-bclub-slate/25 hover:border-bclub-teal/60 transition-all duration-300 shadow-xs hover:shadow-[0_4px_25px_rgba(10,39,83,0.35)] rounded-xs"
             >
               {/* Top Accent Strip on Hover */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-transparent group-hover:bg-bclub-teal transition-all duration-300" />
@@ -71,18 +71,18 @@ export default function AboutSection() {
                   <span className="font-mono text-xs text-bclub-slate tracking-widest">
                     {pillar.index}
                   </span>
-                  <span className="font-display font-bold text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-bclub-ice text-bclub-navy border border-bclub-charcoal/10 group-hover:scale-110 group-hover:bg-bclub-teal/15 group-hover:border-bclub-teal/40 transition-all duration-300">
+                  <span className="font-display font-bold text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-bclub-dark/80 text-bclub-cyan border border-bclub-slate/30 group-hover:scale-110 group-hover:bg-bclub-teal/15 group-hover:border-bclub-teal/40 group-hover:text-bclub-teal transition-all duration-300">
                     {pillar.tag}
                   </span>
                 </div>
 
                 {/* Pillar Header */}
-                <h3 className="font-display font-bold uppercase text-2xl text-bclub-dark tracking-wide mb-3">
+                <h3 className="font-display font-bold uppercase text-2xl text-white tracking-wide mb-3 group-hover:text-bclub-teal transition-colors">
                   {pillar.title}
                 </h3>
 
                 {/* Description */}
-                <p className="font-sans text-sm text-bclub-slate leading-relaxed">
+                <p className="font-sans text-sm text-bclub-ice/60 leading-relaxed">
                   {pillar.description}
                 </p>
               </div>
