@@ -4,22 +4,26 @@ import { useEffect, useState, use } from "react";
 import { useSearchParams } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import Link from "next/link";
+import { getOrCreateDeviceId } from "@/utils/bmunSession";
 
 export default function DelegateRoomClient({ params }: { params: Promise<{ committeeId: string }> }) {
-  // 1. Unwrap params safely
   const unwrappedParams = use(params);
   const committeeId = unwrappedParams.committeeId;
   const isEcofin = committeeId === "ecofin";
 
-  // 2. Read search params
   const searchParams = useSearchParams();
   const delegation = searchParams.get("delegation") || "UNKNOWN DELEGATION";
 
   const [roomState, setRoomState] = useState<{ is_open: boolean; buzzing_open: boolean } | null>(null);
   const [lineup, setLineup] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
+  
+  // Presence error state (Identity Collision)
+  const [presenceError, setPresenceError] = useState<boolean>(false);
 
   useEffect(() => {
+    const deviceId = getOrCreateDeviceId();
+
     const fetchState = async () => {
       const { data: roomData } = await supabase.from("bmun_rooms").select("*").eq("id", committeeId).single();
       if (roomData) setRoomState(roomData);
@@ -30,7 +34,11 @@ export default function DelegateRoomClient({ params }: { params: Promise<{ commi
     fetchState();
 
     const roomSub = supabase
-      .channel(`room_${committeeId}`)
+      .channel(`room_${committeeId}`, {
+        config: {
+          presence: { key: deviceId },
+        },
+      })
       .on("postgres_changes", { event: "UPDATE", schema: "public", table: "bmun_rooms", filter: `id=eq.${committeeId}` }, (payload) => {
         setRoomState(payload.new as any);
       })
@@ -38,14 +46,48 @@ export default function DelegateRoomClient({ params }: { params: Promise<{ commi
         supabase.from("bmun_buzzes").select("*").eq("room_id", committeeId).order("buzzed_at", { ascending: true })
           .then(({ data }) => { if (data) setLineup(data); });
       })
-      .subscribe();
+      // PRESENCE SYNC: Check for Identity Collisions
+      .on("presence", { event: "sync" }, () => {
+        const state = roomSub.presenceState();
+        const activeDelegates: any[] = [];
+        
+        Object.values(state).forEach((presences) => {
+          presences.forEach((p: any) => {
+            if (p.delegation === delegation) activeDelegates.push(p);
+          });
+        });
+
+        if (activeDelegates.length > 1) {
+          activeDelegates.sort((a, b) => a.joinedAt - b.joinedAt);
+          if (activeDelegates[0].deviceId !== deviceId) {
+            setPresenceError(true);
+            roomSub.untrack();
+          }
+        } else if (activeDelegates.length === 1 && activeDelegates[0].deviceId !== deviceId) {
+           setPresenceError(true);
+        }
+      })
+      .subscribe(async (status) => {
+        if (status === "SUBSCRIBED") {
+          await roomSub.track({ delegation, deviceId, joinedAt: Date.now() });
+        }
+      });
 
     return () => { supabase.removeChannel(roomSub); };
-  }, [committeeId]);
+  }, [committeeId, delegation]);
+
+  // Derive hasBuzzed strictly from the lineup array
+  const myRank = lineup.findIndex((b) => b.delegation === delegation) + 1;
+  const hasBuzzed = myRank > 0;
 
   const handleBuzz = async () => {
-    if (!roomState?.buzzing_open) return;
+    if (!roomState?.buzzing_open || hasBuzzed || loading) return;
+    
     setLoading(true);
+
+    // OPTIMISTIC UPDATE: Instantly inject a placeholder into the queue.
+    // This locks the button immediately (hasBuzzed becomes true) and prevents double-clicks.
+    setLineup((prev) => [...prev, { id: "optimistic-lock", delegation, status: "TRANSMITTING..." }]);
 
     const { error } = await supabase.from("bmun_buzzes").insert({
       room_id: committeeId,
@@ -53,15 +95,30 @@ export default function DelegateRoomClient({ params }: { params: Promise<{ commi
       status: "QUEUED",
     });
 
+    setLoading(false);
+
     if (error) {
+      // If network fails, rip the optimistic record back out so they can try again.
+      setLineup((prev) => prev.filter((b) => b.id !== "optimistic-lock"));
       if (error.code === "23505") alert("You are already in the speaker lineup!");
       else alert("Error transmitting buzz. Check connection.");
     }
-    setLoading(false);
+    // If successful, we do nothing! The Realtime subscription will fire in ~50ms 
+    // and overwrite our "optimistic-lock" with the real, permanent DB record.
   };
 
-  const myRank = lineup.findIndex((b) => b.delegation === delegation) + 1;
-  const hasBuzzed = myRank > 0;
+  if (presenceError) {
+    return (
+      <div className="min-h-screen bg-[#070e24] flex items-center justify-center p-6 text-center">
+        <div className="border-4 border-red-600 bg-red-950/40 p-8 max-w-md w-full">
+          <span className="font-mono text-red-500 font-bold tracking-widest uppercase mb-4 block">IDENTITY COLLISION</span>
+          <h1 className="font-display text-2xl text-white uppercase font-black">{delegation} is Active</h1>
+          <p className="font-sans text-gray-400 mt-4 text-sm">Another device is currently connected as this delegation. If this is an error, wait 15 seconds for their session to clear, then refresh.</p>
+          <Link href={`/BMUN`} className="mt-8 inline-block font-mono text-xs text-white border-b border-white hover:text-cyan-400">Return to Lobby</Link>
+        </div>
+      </div>
+    );
+  }
 
   if (!roomState) return <div className="min-h-screen bg-black flex items-center justify-center text-white font-mono uppercase tracking-widest animate-pulse">Initializing Secure Channel...</div>;
 
@@ -78,10 +135,8 @@ export default function DelegateRoomClient({ params }: { params: Promise<{ commi
     );
   }
 
-  // ... (Keep the rest of the Delegate return JSX exactly as you have it)
   return (
     <main className={`min-h-screen ${isEcofin ? "bg-[#f4f1ea] text-black" : "bg-[#0b1636] text-white"} p-4 sm:p-8 selection:bg-black selection:text-white`}>
-      {/* ... Your Delegate JSX ... */}
       <div className="max-w-2xl mx-auto space-y-6">
         <div className={`border-4 border-black p-4 flex items-center justify-between shadow-[6px_6px_0px_#000] ${isEcofin ? "bg-white" : "bg-[#070e24]"}`}>
           <div>
@@ -152,6 +207,20 @@ export default function DelegateRoomClient({ params }: { params: Promise<{ commi
               ))}
             </ul>
           )}
+        </div>
+
+        {/* TERMINATE SESSION BUTTON */}
+        <div className="text-center pt-6 pb-4">
+          <Link
+            href="/BMUN"
+            className={`font-mono text-[10px] sm:text-xs font-bold tracking-widest uppercase border-b transition-colors ${
+              isEcofin 
+                ? "text-gray-500 hover:text-red-600 border-transparent hover:border-red-600" 
+                : "text-gray-500 hover:text-cyan-400 border-transparent hover:border-cyan-400"
+            }`}
+          >
+            [ TERMINATE SECURE SESSION ]
+          </Link>
         </div>
       </div>
     </main>

@@ -14,19 +14,19 @@ export const metadata: Metadata = {
 const BATCH_METADATA: Record<number, { title: string; subtitle: string }> = {
   4: {
     title: "Final Years",
-    subtitle: "Class of 2026",
+    subtitle: "Class of 2027",
   },
   3: {
     title: "Pre-Final Year",
-    subtitle: "Class of 2027",
+    subtitle: "Class of 2028",
   },
   2: {
     title: "2nd Years",
-    subtitle: "Class of 2028",
+    subtitle: "Class of 2029",
   },
   1: {
     title: "1st Years",
-    subtitle: "Class of 2029",
+    subtitle: "Class of 2030",
   },
 };
 

@@ -49,7 +49,7 @@ export const CLUB_EVENTS: ClubEvent[] = [
     date: "2026-09-17",
     endDate: null,
     time: null,
-    academicYear: "2025-26",
+    academicYear: "2026-27",
     venue: "COOPS",
     description:
       "Whether you already have experience or are just getting started, we're looking for people who are willing to learn, take initiative, and build. \n If you're curious about business, finance, consulting, product, startups, or simply want to learn, build, and grow alongside ambitious people — this is your opportunity. ",
@@ -67,7 +67,7 @@ export const CLUB_EVENTS: ClubEvent[] = [
     date: "2026-08-27",
     endDate: null,
     time: "6:30 PM",
-    academicYear: "2025-26",
+    academicYear: "2026-27",
     venue: "MME Seminar Hall (2nd floor)",
     description: "Curious about what the Business Club is all about?\nRight after Trading Pit, we're hosting our official Orientation Session - your introduction to how the club operates, what we build, and how you can be a part of it.",
     poster: "orientation_2026.jpeg",

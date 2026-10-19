@@ -40,7 +40,7 @@ export const CLUB_MEMBERS: ClubMember[] = [
     year: 3,
     department: "Computer Science & Engineering",
     linkedin: "https://www.linkedin.com/in/pranavumbarkar",
-    image: "pranav_umbarkar.jpg",
+    image: "pranav_umbarkar.jpeg",
     position: null,
   },
   {
