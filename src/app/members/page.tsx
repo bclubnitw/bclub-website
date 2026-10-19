@@ -61,7 +61,7 @@ export default function MembersPage() {
 
             <h1 className="font-display uppercase text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white leading-none">
               THE INTELLECT <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-bclub-teal via-bclub-cyan to-white">
+              <span className="text-transparent bg-clip-text bg-linear-to-r from-bclub-teal via-bclub-cyan to-white">
                 BEHIND THE MOVES.
               </span>
             </h1>
@@ -129,7 +129,7 @@ function MemberCard({ member }: { member: ClubMember }) {
       <div className="relative aspect-square w-full bg-bclub-dark/80 overflow-hidden border-b border-bclub-slate/20">
         {member.image ? (
           <Image
-            src={`/team/${member.image}`}
+            src={`/members/${member.year}/${member.image}`}
             alt={member.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
@@ -145,9 +145,9 @@ function MemberCard({ member }: { member: ClubMember }) {
                 .slice(0, 2)
                 .join("")}
             </span>
-            <span className="text-[10px] font-mono uppercase tracking-widest text-bclub-slate/60 mt-2">
+            {/* <span className="text-[10px] font-mono uppercase tracking-widest text-bclub-slate/60 mt-2">
               PORTRAIT PENDING
-            </span>
+            </span> */}
           </div>
         )}
 
