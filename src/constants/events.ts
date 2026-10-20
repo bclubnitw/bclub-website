@@ -28,11 +28,20 @@ export const CLUB_EVENTS: ClubEvent[] = [
     endDate: null,
     time: null,
     academicYear: "2026-27",
-    venue: "TBA",
+    venue: "MBA Classrooms",
     description:
-      "A dual-chamber geopolitical simulation featuring high-stakes debate across the UN Economic and Social Council (ECOSOC) and the Economic and Financial Committee (ECOFIN). Delegates navigate simulated international liquidity crunches, defense subsidies, and global monetary sanction regimes in real-time.",
+      `🌍 𝐁𝐌𝐔𝐍 '𝟐𝟔 ┋ 𝐂𝐫𝐚𝐬𝐡 𝐭𝐡𝐞 𝐜𝐨𝐫𝐫𝐮𝐩𝐭𝐢𝐨𝐧.
+
+🌐 A Model-United Nations like no other.
+
+𝐓𝐇𝐄 𝐁𝐔𝐒𝐈𝐍𝐄𝐒𝐒 𝐂𝐋𝐔𝐁 𝐏𝐑𝐄𝐒𝐄𝐍𝐓𝐒, 𝐁𝐌𝐔𝐍 𝟐𝟎𝟐𝟔, awaiting your delegacy! Heated debates, The craziest alliances, Diplomatic fights (sharp words with a smile) and much more...
+
+𝐏𝐀𝐑𝐓𝐈𝐂𝐈𝐏𝐀𝐓𝐄 𝐈𝐍 𝐓𝐄𝐀𝐌𝐒 𝐎𝐅 𝟐! Make sure you have your partner in crime (whoever it might be 👀) because this level of drama 𝐂𝐀𝐍𝐍𝐎𝐓 be handled by one.
+
+Debate. Fight. Be the world leader you want them to be.
+Committees? 𝐓𝐨𝐩-𝐬𝐞𝐜𝐫𝐞𝐭 𝐍𝐈𝐓𝐖 𝐜𝐥𝐚𝐬𝐬𝐢𝐟𝐢𝐞𝐝 𝐢𝐧𝐟𝐨𝐫𝐦𝐚𝐭𝐢𝐨𝐧... but BCLUB has gotten some leaked-intel, shhh!`,
     poster: "bmun_poster1.jpeg",
-    registrationLink: null,
+    registrationLink: "https://tinyurl.com/2s4zp3y6",
     registrationDeadline: null,
     whatsappLink: null,
     poc: null,

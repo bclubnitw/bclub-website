@@ -11,7 +11,40 @@ export interface ClubMember {
 
 export const CLUB_MEMBERS: ClubMember[] = [
   // ==========================================
-  // 3RD YEAR (Batch of 2027)
+  // 4RD YEAR (Batch of 2027)
+  // ==========================================
+  {
+    id: "4-ashwattha-bandhaokar",
+    name: "Ashwattha Bandhaokar",
+    degree: "B.Tech",
+    year: 4,
+    department: "Civil engineering",
+    linkedin: "https://www.linkedin.com/in/ashwattha-bandhaokar-536622288",
+    image: "ashwattha_bandhaokar.webp",
+    position: "General Secretary",
+  },
+  {
+    id: "4-rishi-agrawal",
+    name: "Rishi Agrawal",
+    degree: "B.Tech",
+    year: 4,
+    department: "Mechanical Engineering",
+    linkedin: "https://www.linkedin.com/in/rishiagrawal2004",
+    image: "rishi_agrawal.png",
+    position: null,
+  },
+  {
+    id: "4-lohit-a-s",
+    name: "Lohit A S",
+    degree: "B.Tech",
+    year: 4,
+    department: "Mechanical Engineering",
+    linkedin: "https://www.linkedin.com/in/lohit-a-s-2648032a7",
+    image: "lohit.jpg",
+    position: null,
+  },
+  // ==========================================
+  // 3RD YEAR (Batch of 2028)
   // ==========================================
   {
     id: "3-himavi-n",
@@ -60,7 +93,7 @@ export const CLUB_MEMBERS: ClubMember[] = [
     year: 3,
     department: "Electronics and Communication Engineering (VLSI)",
     linkedin: "https://www.linkedin.com/in/khush-satyaprakash-jaisinghani-60b13a260",
-    image: "khush_satyaprakash_jaisinghani.jpg",
+    image: "khush_satyaprakash_jaisinghani.jpeg",
     position: null,
   },
   {
@@ -83,7 +116,46 @@ export const CLUB_MEMBERS: ClubMember[] = [
     image: "tanuj_kulkarni.jpeg",
     position: null,
   },
-
+  {
+    id: "3-t-chirantantej",
+    name: "T.Chirantantej",
+    degree: "B.Tech",
+    year: 3,
+    department: "Civil Engineering",
+    linkedin: "https://www.linkedin.com/in/chirantan-tej-703913326",
+    image: "t_chirantantej.jpg",
+    position: null,
+  },
+  {
+    id: "3-abhiram",
+    name: "Abhiram",
+    degree: "B.Tech",
+    year: 3,
+    department: "Metallurgical and Materials Engineering",
+    linkedin: null,
+    image: null,
+    position: null,
+  },
+  {
+    id: "3-rajwardhan-singh",
+    name: "Rajwardhan Singh",
+    degree: "B.Tech",
+    year: 3,
+    department: "Computer Science & Engineering",
+    linkedin: "https://www.linkedin.com/in/rajwardhan-singh",
+    image: "rajwardhan_singh.jpg",
+    position: null,
+  },
+  {
+    id: "3-priyaranjan-satpathy",
+    name: "Priyaranjan Satpathy",
+    degree: "B.Tech",
+    year: 3,
+    department: "Metallurgical and Materials Engineering",
+    linkedin: null,
+    image: "priyaranjan_satpathy.jpg",
+    position: null,
+  },
   // ==========================================
   // 2ND YEAR (Batch of 2028)
   // ==========================================
@@ -157,7 +229,36 @@ export const CLUB_MEMBERS: ClubMember[] = [
     image: "sneha_sarkar.jpg",
     position: null,
   },
-
+  {
+    id: "2-gagan-tottanapudi",
+    name: "Gagan Tottanapudi",
+    degree: "B.Tech",
+    year: 2,
+    department: "Computer Science & Engineering",
+    linkedin: "https://www.linkedin.com/in/gagan-t",
+    image: "gagan_tottanapudi.png",
+    position: null,
+  },
+  {
+    id: "2-arjun-rv",
+    name: "Arjun RV",
+    degree: "B.Tech",
+    year: 2,
+    department: "Chemical Engineering",
+    linkedin: "www.linkedin.com/in/ arjun-rv01123581321349",
+    image: "arjun_rv.jpeg",
+    position: null,
+  },
+  {
+    id: "2-soma-shrika-rao",
+    name: "Soma Shrika Rao",
+    degree: "B.Tech",
+    year: 2,
+    department: "Chemical Engineering ",
+    linkedin: "https://www.linkedin.com/in/soma-shrika-rao-765391421",
+    image: "soma_shrika_rao.jpeg",
+    position: null,
+  },
   // ==========================================
   // 1ST YEAR (Batch of 2029)
   // ==========================================
@@ -179,6 +280,26 @@ export const CLUB_MEMBERS: ClubMember[] = [
     department: "Electronics and Communication Engineering",
     linkedin: "https://www.linkedin.com/in/soham-nilkanth-374b64431",
     image: "soham_nilkanth.jpg",
+    position: null,
+  },
+  {
+    id: "1-nakshatra-shukla",
+    name: "Nakshatra Shukla",
+    degree: "B.Tech",
+    year: 1,
+    department: "Computer Science & Engineering",
+    linkedin: "https://www.linkedin.com/in/nakshatra-shukla-149245445",
+    image: "nakshatra_shukla.jpg",
+    position: null,
+  },
+  {
+    id: "1-shubham-das",
+    name: "Shubham Das",
+    degree: "B.Tech",
+    year: 1,
+    department: "Mechanical Engineering",
+    linkedin: "https://www.linkedin.com/in/shubham-das-16a36a203",
+    image: "shubham_das.jpeg",
     position: null,
   },
 ];
