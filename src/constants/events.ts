@@ -47,7 +47,34 @@ Committees? 𝐓𝐨𝐩-𝐬𝐞𝐜𝐫𝐞𝐭 𝐍𝐈𝐓𝐖 𝐜𝐥𝐚�
     poc: null,
     href: "/BMUN",
   },
+  {
+    id: "business-frenzy-2026",
+    title: "Business Frenzy",
+    tagline: "Smartphone OEM Market Simulation",
+    date: "2026-10-30",
+    endDate: null,
+    time: null,
+    academicYear: "2026-27",
+    venue: "TBA",
+    description:
+      `📱 𝐁𝐔𝐒𝐈𝐍𝐄𝐒𝐒 𝐅𝐑𝐄𝐍𝐙𝐘 ┋ 𝐁𝐮𝐢𝐥𝐝 𝐢𝐭. 𝐓𝐫𝐚𝐝𝐞 𝐢𝐭. 𝐁𝐢𝐝 𝐟𝐨𝐫 𝐢𝐭.
 
+  🌐 Run a smartphone company for a day.
+
+  𝐓𝐇𝐄 𝐁𝐔𝐒𝐈𝐍𝐄𝐒𝐒 𝐂𝐋𝐔𝐁 𝐏𝐑𝐄𝐒𝐄𝐍𝐓𝐒 an official Technozion '26 event. Step onto the ruthless trading floor as a Master Strategist or a Market Rookie. 
+
+  𝐏𝐑𝐎𝐂𝐔𝐑𝐄 𝐘𝐎𝐔𝐑 𝐓𝐄𝐂𝐇: Source screens, processors, batteries, and cameras.
+  𝐓𝐑𝐀𝐃𝐄 𝐒𝐌𝐀𝐑𝐓: Scarcity drives the price. Negotiate with rival OEMs to lower your production costs.
+  𝐒𝐔𝐑𝐕𝐈𝐕𝐄 𝐓𝐇𝐄 𝐃𝐑𝐎𝐏: Mid-game market shocks and tech drops will test your adaptability.
+
+  Zero prior experience required. Just sharp instincts. Are you ready to build a real empire?`,
+    poster: "BusinessFrenzy.jpeg",
+    registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeHGty7EAS3c6ZfEo3DSgGJjs9vFUOawu2EdY0cW_t8RGrBJg/viewform",
+    registrationDeadline: null,
+    whatsappLink: null,
+    poc: null,
+    href: "/BusinessFrenzy",
+  },
   // ==========================================
   // PAST EVENTS (Academic Year 2026-27 & 2025-26)
   // ==========================================

@@ -30,10 +30,10 @@ const PHASES = [
 
 export default function HeroSection({ 
   onStartQuiz, 
-  onSkip 
+  registration_link
 }: { 
   onStartQuiz: () => void; 
-  onSkip: () => void;
+  registration_link: string | null
 }) {
   const [activePhase, setActivePhase] = useState(0);
 
@@ -65,7 +65,7 @@ export default function HeroSection({
           </span>
         </h1>
         <p className="mt-6 font-sans text-bclub-ice/90 text-base sm:text-xl max-w-2xl mx-auto font-medium">
-          Build it. Trade it. Bid for it. <br className="sm:hidden"/> Run a smartphone company for a day.
+          Build it. Trade it. Bid for it. <br className="sm:hidden"/> Run a <strong className="text-white">smartphone</strong> company for a day.
         </p>
       </div>
 
@@ -152,7 +152,7 @@ export default function HeroSection({
               </div>
             )}
             {activePhase === 2 && (
-              <div className="w-full max-w-[240px] space-y-3">
+              <div className="w-full max-w-60 space-y-3">
                 <div className="flex justify-between items-center bg-emerald-500/10 border border-emerald-500/30 p-3 rounded">
                   <span className="font-mono text-xs text-emerald-400">BID: T1 CPU</span>
                   <span className="font-mono text-sm text-emerald-300 font-bold">₹ 4,500</span>
@@ -169,7 +169,7 @@ export default function HeroSection({
               </div>
             )}
             {activePhase === 3 && (
-              <div className="w-full max-w-[240px] border-l-2 border-red-500 bg-gradient-to-r from-red-500/20 to-transparent p-4 animate-pulse">
+              <div className="w-full max-w-60 border-l-2 border-red-500 bg-linear-to-r from-red-500/20 to-transparent p-4 animate-pulse">
                 <span className="font-mono text-[10px] text-red-400 tracking-[0.2em] font-bold block mb-1">MARKET SHOCK</span>
                 <span className="font-display text-white text-lg uppercase tracking-wider leading-tight block">
                   New Camera Tech Unlocked
@@ -189,7 +189,7 @@ export default function HeroSection({
             <h3 className="font-display text-2xl sm:text-4xl font-bold text-white uppercase tracking-wide mb-4 leading-tight">
               {PHASES[activePhase].title}
             </h3>
-            <p className="font-sans text-sm sm:text-base text-bclub-ice/80 leading-relaxed min-h-[80px]">
+            <p className="font-sans text-sm sm:text-base text-bclub-ice/80 leading-relaxed min-h-20">
               {PHASES[activePhase].desc}
             </p>
 
@@ -235,12 +235,22 @@ export default function HeroSection({
             <span>TAKE WARM-UP QUIZ</span>
             <span>↗</span>
           </button>
-          <button
+          {/* <button
             onClick={onSkip}
             className="w-full sm:w-auto px-8 py-4 bg-transparent border border-bclub-slate/40 hover:border-white text-bclub-slate hover:text-white font-mono uppercase text-xs tracking-widest transition-all text-center cursor-pointer backdrop-blur-sm rounded-sm"
           >
             Skip & Register
-          </button>
+          </button> */}
+          {registration_link &&
+            <a
+              href={registration_link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-8 py-4 bg-transparent border border-bclub-slate/40 hover:border-white text-bclub-slate hover:text-white font-mono uppercase text-xs tracking-widest transition-all text-center cursor-pointer backdrop-blur-sm rounded-sm"
+              >
+                Skip & Register
+            </a>
+          }
         </div>
       </div>
     </div>

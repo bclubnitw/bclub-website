@@ -243,11 +243,11 @@ function EventDossierModal({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 pt-20 sm:pt-24 pb-6 bg-bclub-dark/85 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-100 flex items-center justify-center p-4 sm:p-6 pt-20 sm:pt-24 pb-6 bg-bclub-dark/85 backdrop-blur-md animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-2xl bg-gradient-to-b from-bclub-charcoal/95 to-bclub-dark border-2 border-bclub-teal/60 text-bclub-ice shadow-[0_0_50px_rgba(10,39,83,0.8)] rounded-sm overflow-hidden flex flex-col max-h-[calc(100vh-6rem)]"
+        className="relative w-full max-w-2xl bg-linear-to-b from-bclub-charcoal/95 to-bclub-dark border-2 border-bclub-teal/60 text-bclub-ice shadow-[0_0_50px_rgba(10,39,83,0.8)] rounded-sm overflow-hidden flex flex-col max-h-[calc(100vh-6rem)]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Fixed Header */}
@@ -270,7 +270,7 @@ function EventDossierModal({
         {/* Modal Scrollable Body */}
         <div className="p-6 sm:p-8 overflow-y-auto min-h-0 flex-1 space-y-6">
           {event.poster && (
-            <div className="relative w-full max-h-[380px] sm:max-h-[440px] aspect-[4/5] sm:aspect-[16/10] mx-auto bg-bclub-dark/90 border border-bclub-slate/30 rounded-xs overflow-hidden flex items-center justify-center">
+            <div className="relative w-full max-h-95 sm:max-h-[440px] aspect-[4/5] sm:aspect-[16/10] mx-auto bg-bclub-dark/90 border border-bclub-slate/30 rounded-xs overflow-hidden flex items-center justify-center">
               {/* Blurred backdrop fill to eliminate dead black gutters */}
               <Image
                 src={`/events/${event.poster}`}

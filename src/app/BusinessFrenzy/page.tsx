@@ -7,10 +7,29 @@ import Footer from "@/components/Footer";
 import HeroSection from "./components/HeroSection";
 import QuizSection from "./components/QuizSection";
 import EndScreen from "./components/EndScreen";
+import { ClubEvent, CLUB_EVENTS } from "@/constants/events";
 
 export default function BusinessFrenzyPage() {
   const [view, setView] = useState<"intro" | "quiz" | "register">("intro");
   const [score, setScore] = useState(0);
+
+  const event: ClubEvent[] = CLUB_EVENTS.filter((event) => {
+    return event.id === "business-frenzy-2026"
+  });
+
+  if (event.length === 0) {
+    return (
+      <>
+        <Navbar/>
+        <main className="min-h-screen bg-bclub-dark text-bclub-ice pt-24 pb-28 selection:bg-bclub-teal selection:text-bclub-dark relative overflow-hidden flex justify-center items-center">
+          Event Not Found!
+        </main>
+        <Footer/>
+      </>
+    )
+  }
+
+  const event_details: ClubEvent = event[0];
 
   return (
     <>
@@ -21,7 +40,7 @@ export default function BusinessFrenzyPage() {
         <div className="absolute inset-0 z-0 pointer-events-none bg-bclub-dark">
           <div className="absolute top-0 left-0 w-full h-full">
             <Image
-              src="/events/BusinessFrenzy.jpeg"
+              src={`/events/${event_details?.poster}`}
               alt="Background Overlay"
               fill
               className="object-contain sm:object-cover object-top opacity-15 mix-blend-screen"
@@ -37,7 +56,7 @@ export default function BusinessFrenzyPage() {
 
         <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {view === "intro" && (
-            <HeroSection onStartQuiz={() => setView("quiz")} onSkip={() => setView("register")} />
+            <HeroSection onStartQuiz={() => setView("quiz")} registration_link={event_details?.registrationLink ?? null} />
           )}
           
           {view === "quiz" && (
@@ -56,6 +75,7 @@ export default function BusinessFrenzyPage() {
                 setScore(0);
                 setView("intro");
               }} 
+              registration_link={event_details?.registrationLink ?? null}
             />
           )}
         </div>
