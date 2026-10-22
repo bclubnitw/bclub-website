@@ -75,9 +75,19 @@ export default function QuizSection({ onComplete }: { onComplete: (score: number
   };
 
   const handleNext = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     if (currentQuestion < QUIZ_QUESTIONS.length - 1) {
       setCurrentQuestion((prev) => prev + 1);
       setSelectedOption(null);
+    } else {
+      onComplete(score);
+    }
+  };
+
+  const handleSkip = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    if (currentQuestion < QUIZ_QUESTIONS.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
     } else {
       onComplete(score);
     }
@@ -130,6 +140,19 @@ export default function QuizSection({ onComplete }: { onComplete: (score: number
         })}
       </div>
 
+      {/* Skip Button (Only visible before answering) */}
+      {!hasAnswered && (
+        <div className="mt-8 flex justify-end">
+          <button
+            onClick={handleSkip}
+            className="text-xs font-mono text-bclub-slate hover:text-white uppercase tracking-widest transition-colors border-b border-transparent hover:border-bclub-slate pb-0.5"
+          >
+            Skip Question →
+          </button>
+        </div>
+      )}
+
+      {/* Feedback Card (Visible after answering) */}
       {hasAnswered && (
         <div className="mt-8 p-5 border border-bclub-teal/30 bg-bclub-navy/60 backdrop-blur-md rounded-lg animate-in fade-in duration-300">
           <span className={`font-mono text-xs uppercase tracking-widest font-bold block mb-2 ${isCorrect ? "text-emerald-400" : "text-amber-400"}`}>
@@ -141,6 +164,7 @@ export default function QuizSection({ onComplete }: { onComplete: (score: number
         </div>
       )}
 
+      {/* Next / Finish Button (Visible after answering) */}
       {hasAnswered && (
         <div className="mt-8 flex justify-end">
           <button
