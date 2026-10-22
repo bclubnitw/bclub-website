@@ -5,11 +5,17 @@ const REGISTRATION_LINK = "https://docs.google.com/spreadsheets/d/1a0XIJiSUG7PDi
 
 export default function EndScreen({ score, onRestart }: { score: number, onRestart: () => void }) {
   
-  const getRank = () => {
-    if (score === 5) return { title: "VISIONARY FOUNDER", color: "text-emerald-400" };
-    if (score >= 3) return { title: "VP OF PRODUCT", color: "text-bclub-teal" };
-    return { title: "INTERN ANALYST", color: "text-amber-400" };
-  };
+    const getRank = () => {
+        if (score === 5) return { title: "MASTER STRATEGIST", color: "text-emerald-400" };
+        if (score >= 3) return { title: "SEASONED HUSTLER", color: "text-bclub-teal" };
+        return { title: "MARKET ROOKIE", color: "text-amber-400" };
+    };
+
+    const getMotivation = () => {
+        if (score === 5) return "Flawless logic. But theory is easy—let's see if you can survive the actual trading floor.";
+        if (score >= 3) return "Solid instincts. You've got the basics down, now it's time to build a real empire.";
+        return "Rough start, but that's exactly why you need to be there. Come learn the ropes, adapt, and outsmart the competition.";
+    };
 
   const rank = getRank();
 
@@ -33,14 +39,21 @@ export default function EndScreen({ score, onRestart }: { score: number, onResta
         </div>
       </div>
       
-      <div className="space-y-4">
-        <h2 className="font-display uppercase text-4xl sm:text-6xl font-black tracking-tight text-white leading-none">
-          READY TO RUN <br className="hidden sm:block" /> THE MARKET?
-        </h2>
-        <p className="font-sans text-bclub-ice/80 text-lg sm:text-xl">
-          Secure your company's spot on the trading floor.
-        </p>
-      </div>
+        <div className="space-y-4">
+            <h2 className="font-display uppercase text-4xl sm:text-5xl font-black tracking-tight text-white mb-2">
+                READY TO RUN <br className="hidden sm:block" /> THE MARKET?
+            </h2>
+            
+            {/* Dynamic pitch based on their score */}
+            <p className="font-sans text-bclub-ice/90 text-base sm:text-lg max-w-lg mx-auto">
+                {getMotivation()}
+            </p>
+            
+            {/* Universal encouragement */}
+            <p className="font-mono text-bclub-teal text-xs sm:text-sm font-bold uppercase tracking-widest pt-2">
+                Zero prior experience required. Just sharp instincts.
+            </p>
+        </div>  
 
       <div className="pt-6 flex flex-col items-center gap-6 w-full sm:w-auto">
         <a
