@@ -57,14 +57,29 @@ export default function HeroSection({
       </div>
 
       {/* Main Title */}
+      {/* Main Title */}
       <div className="text-center mb-12 sm:mb-20 relative">
-        <h1 className="relative font-display uppercase text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-none drop-shadow-2xl">
+        <style>{`
+          @keyframes cinematicReveal {
+            0% { opacity: 0; transform: translateY(30px) scale(0.95); }
+            100% { opacity: 1; transform: translateY(0) scale(1); }
+          }
+          .anim-title {
+            animation: cinematicReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          }
+          .anim-subtitle {
+            opacity: 0; /* Keeps it hidden before delay starts */
+            animation: cinematicReveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+          }
+        `}</style>
+
+        <h1 className="anim-title relative font-display uppercase text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-none drop-shadow-2xl">
           BUSINESS <br />
           <span className="text-transparent bg-clip-text bg-linear-to-br from-bclub-teal via-bclub-cyan to-white">
             FRENZY
           </span>
         </h1>
-        <p className="mt-6 font-sans text-bclub-ice/90 text-base sm:text-xl max-w-2xl mx-auto font-medium">
+        <p className="anim-subtitle mt-6 font-sans text-bclub-ice/90 text-base sm:text-xl max-w-2xl mx-auto font-medium">
           Build it. Trade it. Bid for it. <br className="sm:hidden"/> Run a <strong className="text-white">smartphone</strong> company for a day.
         </p>
       </div>
@@ -235,12 +250,6 @@ export default function HeroSection({
             <span>TAKE WARM-UP QUIZ</span>
             <span>↗</span>
           </button>
-          {/* <button
-            onClick={onSkip}
-            className="w-full sm:w-auto px-8 py-4 bg-transparent border border-bclub-slate/40 hover:border-white text-bclub-slate hover:text-white font-mono uppercase text-xs tracking-widest transition-all text-center cursor-pointer backdrop-blur-sm rounded-sm"
-          >
-            Skip & Register
-          </button> */}
           {registration_link &&
             <a
               href={registration_link}
