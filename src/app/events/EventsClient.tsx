@@ -187,7 +187,7 @@ function EventCard({
 
         {isUpcoming && (
           <div className="absolute top-3 left-3 bg-emerald-500 text-black text-[10px] font-mono font-black uppercase tracking-widest px-2.5 py-1 shadow-md">
-            REGISTRATIONS ACTIVE
+            UPCOMING EVENT!
           </div>
         )}
 

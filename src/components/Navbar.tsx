@@ -6,7 +6,8 @@ import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "BMUN", href: "/BMUN" },
+  {name: "Business Frenzy", href:"/BusinessFrenzy", highlight: true},
+  // { name: "BMUN", href: "/BMUN" },
   { name: "Events", href: "/events" },
   { name: "Members", href: "/members" },
   // { name: "Connect", href: "/connect" },
@@ -39,12 +40,17 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Navigation Links */}
+        {/* 2. Desktop Navigation Links (Update the map function) */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="font-sans text-sm font-semibold tracking-wide text-bclub-ice/75 hover:text-bclub-teal transition-colors"
+              className={`font-sans text-sm font-semibold tracking-wide transition-colors ${
+                link.highlight 
+                  ? "text-bclub-teal animate-pulse drop-shadow-[0_0_8px_rgba(55,183,195,0.6)]" 
+                  : "text-bclub-ice/75 hover:text-bclub-teal"
+              }`}
             >
               {link.name}
             </Link>
