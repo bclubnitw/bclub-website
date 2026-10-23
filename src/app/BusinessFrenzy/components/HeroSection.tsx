@@ -5,7 +5,7 @@ const PHASES = [
   { 
     id: "01", 
     short: "DEMOGRAPHIC", 
-    title: "Select Target Market", 
+    title: "Own A Target Market", 
     desc: "Are you building phones for the masses or the 1%? Lock in your segment: Budget, Mid-Range, or Flagship. This dictates your entire capital strategy." 
   },
   { 
@@ -58,7 +58,7 @@ export default function HeroSection({
 
       {/* Main Title */}
       {/* Main Title */}
-      <div className="text-center mb-12 sm:mb-20 relative">
+      <div className="text-center mb-8 sm:mb-12 relative">
         <style>{`
           @keyframes cinematicReveal {
             0% { opacity: 0; transform: translateY(30px) scale(0.95); }
@@ -82,6 +82,14 @@ export default function HeroSection({
         <p className="anim-subtitle mt-6 font-sans text-bclub-ice/90 text-base sm:text-xl max-w-2xl mx-auto font-medium">
           Build it. Trade it. Bid for it. <br className="sm:hidden"/> Run a <strong className="text-white">smartphone</strong> company for a day.
         </p>
+        <div className="anim-scroll mt-2 sm:mt-4 flex items-center justify-center gap-1">
+          <span className="font-mono text-[10px] sm:text-xs text-bclub-slate uppercase tracking-widest font-semibold">
+            Scroll down to register
+          </span>
+          <div className="flex flex-col items-center -space-y-3 mt-1 animate-bounce text-bclub-teal">
+            <svg className="w-2 h-2 sm:w-3 sm:h-3 opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"/></svg>
+          </div>
+        </div>
       </div>
 
       {/* Dynamic Terminal: The Smartphone OEM Simulation */}
@@ -143,7 +151,7 @@ export default function HeroSection({
               </div>
             )}
             {activePhase === 1 && (
-              <div className="grid grid-cols-2 gap-4 w-full max-w-[240px]">
+              <div className="grid grid-cols-2 gap-4 w-full sm:max-w-[240px] max-w-[180px]">
                 <div className="aspect-square rounded border border-bclub-cyan/50 bg-bclub-cyan/10 flex flex-col items-center justify-center shadow-[0_0_15px_rgba(55,183,195,0.15)] relative">
                   <span className="absolute top-1 right-1 font-mono text-[8px] text-bclub-cyan">T1</span>
                   <svg className="w-8 h-8 text-bclub-cyan mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
