@@ -47,15 +47,19 @@ export const CLUB_EVENTS: ClubEvent[] = [
     poc: null,
     href: "/BMUN",
   },
+  
+  // ==========================================
+  // PAST EVENTS (Academic Year 2026-27 & 2025-26)
+  // ==========================================
   {
     id: "business-frenzy-2026",
     title: "Business Frenzy",
     tagline: "Smartphone OEM Market Simulation",
     date: "2026-10-30",
     endDate: null,
-    time: null,
+    time: "2 PM to 6 PM",
     academicYear: "2026-27",
-    venue: "TBA",
+    venue: "Mechanical Department B311",
     description:
       `📱 𝐁𝐔𝐒𝐈𝐍𝐄𝐒𝐒 𝐅𝐑𝐄𝐍𝐙𝐘 ┋ 𝐁𝐮𝐢𝐥𝐝 𝐢𝐭. 𝐓𝐫𝐚𝐝𝐞 𝐢𝐭. 𝐁𝐢𝐝 𝐟𝐨𝐫 𝐢𝐭.
 
@@ -71,13 +75,10 @@ export const CLUB_EVENTS: ClubEvent[] = [
     poster: "BusinessFrenzy.jpeg",
     registrationLink: "https://docs.google.com/forms/d/e/1FAIpQLSeHGty7EAS3c6ZfEo3DSgGJjs9vFUOawu2EdY0cW_t8RGrBJg/viewform",
     registrationDeadline: null,
-    whatsappLink: null,
+    whatsappLink: "https://chat.whatsapp.com/FM2oEQysZXE4BlfxtEftue?mode=gi_t",
     poc: null,
     href: "/BusinessFrenzy",
   },
-  // ==========================================
-  // PAST EVENTS (Academic Year 2026-27 & 2025-26)
-  // ==========================================
   {
     id: "fresher-recruitment-2026",
     title: "Fresher's Recruitment 2026",

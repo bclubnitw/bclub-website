@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const navLinks = [
   { name: "Home", href: "/" },
-  {name: "Business Frenzy", href:"/BusinessFrenzy", highlight: true},
-  // { name: "BMUN", href: "/BMUN", highlight: true },
+  // {name: "Business Frenzy", href:"/BusinessFrenzy", highlight: true},
+  { name: "BMUN", href: "/BMUN", highlight: true },
   { name: "Events", href: "/events" },
   { name: "Members", href: "/members" },
   // { name: "Connect", href: "/connect" },

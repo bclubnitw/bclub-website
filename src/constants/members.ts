@@ -43,6 +43,16 @@ export const CLUB_MEMBERS: ClubMember[] = [
     image: "lohit.jpg",
     position: null,
   },
+  {
+    id: "4-samskruthi ",
+    name: "Samskruthi",
+    degree: "B.Tech",
+    year: 4,
+    department: "Metallurgical and Materials Engineering",
+    linkedin: "https://www.linkedin.com/in/sai-samskruthi-bysani-72118021b",
+    image: "samskruthi.jpeg",
+    position: null,
+  },
   // ==========================================
   // 3RD YEAR (Batch of 2028)
   // ==========================================
@@ -257,6 +267,16 @@ export const CLUB_MEMBERS: ClubMember[] = [
     department: "Chemical Engineering ",
     linkedin: "https://www.linkedin.com/in/soma-shrika-rao-765391421",
     image: "soma_shrika_rao.jpeg",
+    position: null,
+  },
+  {
+    id: "2-prathit-dwivedi ",
+    name: "Prathit Dwivedi ",
+    degree: "B.Tech",
+    year: 2,
+    department: "Civil Engineering",
+    linkedin: null,
+    image: null,
     position: null,
   },
   // ==========================================
